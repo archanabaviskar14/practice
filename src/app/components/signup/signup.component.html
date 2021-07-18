@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="card shadow-lg p-3">
+    <div class="card-title text-center">Sign Up</div>
+    <form #f="ngForm" (ngSubmit)="signUp(f)">
+        <div class="form-group">
+            <input ngModel name="name" #name="ngModel" type="text" class="form-control" placeholder="Enter your name" required>
+            <div class="alert alert-danger" *ngIf="name.invalid && name.touched">Name is required</div>
+        </div>
+        <div class="form-group"><br>
+            <input ngModel name="email" #email="ngModel" type="email" class="form-control" placeholder="Enter your Email Address" required>
+            <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched">Email is required</div>
+            <div class="alert alert-danger" *ngIf="email.errors?.email && email.touched">Please enter the valid email address</div>
+        </div>
+        <div class="form-group"><br>
+            
+            <input ngModel name="password"  type="password" #password="ngModel" class="form-control"  required [minlength]="6">
+            <div class="alert alert-danger" *ngIf="password.errors?.required && password.touched">Password is required</div>
+            <div class="alert alert-danger" *ngIf="password.errors?.minlength && password.touched">Password should be of length 6</div>
+        </div>
+        <div class="form-group"><br>
+            <input ngModel name="confirmpassword"  type="password" #confirmpassword="ngModel"  class="form-control" required>
+            <div class="alert alert-danger" *ngIf="confirmpassword.errors?.required && confirmpassword.touched">Password is required</div>  
+            <div class="alert alert-danger" *ngIf="password.value!== confirmpassword.value">Passwords are not matching</div>
+        </div>
+        <div class="form-group"><br>
+            <input ngModel name="address" type="text" #address="ngModel" class="form-control" placeholder="Enter your address here" required>
+            <div class="alert alert-danger" *ngIf="address.invalid && address.touched">Please enter your address</div>
+        </div>
+        <div class="form-group"><br>
+            <button class="btn btn-primary blocked" type="submit" [disabled]="f.invalid">Sign Up</button>
+        </div>
+        <br>
+        <div class="alert alert-danger" *ngIf="errormsg">{{errormsg}}</div>
+    </form>
+</div>
+</div>

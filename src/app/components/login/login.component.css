@@ -1,0 +1,24 @@
+.card-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 1000px;
+    font-size: 20px;
+    color:blue;
+}
+.card{
+    width: 50%;
+    margin-left: 200px;
+    
+}
+.form-control{
+    width: 80%;
+    margin-left: 50px;
+}
+.alert-danger{
+    width:80%;
+    margin-left: 50px;
+}
+.btn-primary{
+    margin-left: 180px;
+    margin-bottom: 20px;
+}

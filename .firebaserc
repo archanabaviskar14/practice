@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ecommerce-f2fad": {
+      "hosting": {
+        "Ecommerce": [
+          "ecommerce-f2fad"
+        ]
+      }
+    }
+  }
+}
